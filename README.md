@@ -1,8 +1,8 @@
-Alt-# Project name: printf
+# Project name: printf
 
   This is a group project, writes a function-like printf() function in C
 
-Alt-### Project Requirements:
+## Project Requirements:
 
  * All files will be compiled on Ubuntu 14.04 LTS
  * All files will be compiled with gcc 4.8.4 using the flags -Wall -Werror -Wextra and -pedantic
@@ -11,7 +11,7 @@ Alt-### Project Requirements:
  * No more than 5 functions per file
  * Makes a header file holberton.h that includes all prototypes and header include guarded
 
-Alt-### Files List:
+## Files List:
 
   + holberton.h - a header file that contain all prototypes for functions
 
@@ -21,7 +21,7 @@ Alt-### Files List:
 
   + add_features.c - a function that contains the types of that _printf can print
 
-Alt-### Peers Project by:
+## Peers Project by:
 
   + Brittney Goertzen  [GITHUB]() || [TWITTER]()
 
