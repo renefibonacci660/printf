@@ -13,12 +13,14 @@
 
 int _printf(const char *format, ...)
 {
-	int i, j, len, p_total;
+	int i, len, p_total;
 	char *s;
 	va_list ap;
 	char *(*pointer_get_arg)(va_list);
 
-	pointer_get_arg == NULL;
+	if (format == NULL)
+		return (-1);
+
 	len = p_total = 0;
 	va_start(ap, format);
 	for (i = 0; format != NULL && format[i] != '\0'; i++)
