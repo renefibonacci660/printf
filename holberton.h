@@ -12,6 +12,7 @@ typedef struct ArgTypes
 	char *car;
 	char *(*fn)();
 } Arg_Types;
+
 int _printf(const char *format, ...);
 char *(*get_arg_type(char s))(va_list);
 char *found_percent();
