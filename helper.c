@@ -15,6 +15,7 @@ char *(*get_arg_type(char s))(va_list)
 
 	Arg_Types arg_types[] = {
 		{"c", found_char},
+		{"C", found_char},
 		{"s", found_string},
 		{"%", found_percent},
 		{"d", found_int},
