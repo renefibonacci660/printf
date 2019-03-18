@@ -2,7 +2,7 @@
 #include <stddef.h>
 #include <stdlib.h>
 #include <stdio.h>
-
+#include <string.h>
 /**
  * _printf - a function that prints the argument upon its type and format
  * @format: a pointer to first argument
@@ -17,8 +17,9 @@ int _printf(const char *format, ...)
 	char *s;
 	va_list ap;
 	char *(*pointer_get_arg)(va_list);
+	char *v = "%";
 
-	if (format == NULL)
+	if (format == NULL || strcmp(v, format) == 0)
 		return (-1);
 
 	len = p_total = 0;
