@@ -57,11 +57,11 @@ char *found_percent(void)
 char *found_nothing(char c)
 {
 	char str[3];
-	char *s;
+	char *s = NULL;
 
-	s = str;
 	str[0] = '%';
 	str[1] = c;
 	str[2] = '\0';
+	s = str;
 	return (s);
 }
