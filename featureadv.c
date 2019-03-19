@@ -15,20 +15,11 @@ char *found_int(va_list num)
 	char *str;
 
 	n = va_arg(num, int);
-	i = 0;
+	i = count = 0;
 	tens = 1;
-	if (n > 0)
-	{
-		res = n;
-		count = 0;
-	}
-	else
-	{
-		res = (n * -1);
-		count = 1;
-	}
+	(n > 0) ? (res = n * -1) : (res = n, count = 1);
 	temp = res;
-	while (temp >= 10)
+	while (temp <= -10)
 	{
 		tens *= 10;
 		temp /= 10;
@@ -39,7 +30,7 @@ char *found_int(va_list num)
 		str[i++] = '-';
 	while (tens >= 1)
 	{
-		str[i++] = (((res / tens) % 10) + '0');
+		str[i++] = (((res / tens) % 10) * -1 + '0');
 		tens /= 10;
 	}
 	str[i] = '\0';
