@@ -1,7 +1,6 @@
 #include "holberton.h"
 #include <stdlib.h>
 #include <stdarg.h>
-#include <unistd.h>
 
 /**
  * found_int - a function that coverts integer to string
@@ -13,7 +12,9 @@ char *found_int(va_list num)
 {
 	int n, i, tens, res, temp, count;
 	char *str;
+	static char buffer[50];
 
+	str = &buffer[0];
 	n = va_arg(num, int);
 	i = count = 0;
 	tens = 1;
@@ -25,7 +26,6 @@ char *found_int(va_list num)
 		temp /= 10;
 		count++;
 	}
-	str = malloc((count + 1));
 	if (n < 0)
 		str[i++] = '-';
 	while (tens >= 1)
@@ -47,7 +47,9 @@ char *found_unsigned(va_list unsign)
 {
 	unsigned int i, res, tens, temp, count;
 	char *str;
+	static char buffer[50];
 
+	str = &buffer[0];
 	res = va_arg(unsign, unsigned int);
 	count = i = 0;
 	tens = 1;
@@ -58,7 +60,6 @@ char *found_unsigned(va_list unsign)
 		temp /= 10;
 		count++;
 	}
-	str = malloc((count + 1));
 	while (tens >= 1)
 	{
 		str[i++] = (((res / tens) % 10) + '0');
@@ -79,7 +80,9 @@ char *found_octal(va_list octal)
 {
 	unsigned int i, res, tens, temp, count;
 	char *str;
+	static char buffer[50];
 
+	str = &buffer[0];
 	res = va_arg(octal, unsigned int);
 	count = i = 0;
 	tens = 1;
@@ -90,7 +93,6 @@ char *found_octal(va_list octal)
 		temp /= 8;
 		count++;
 	}
-	str = malloc((count + 1));
 	while (tens >= 1)
 	{
 		str[i++] = (((res / tens) % 8) + '0');
