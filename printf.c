@@ -31,6 +31,8 @@ int _printf(const char *format, ...)
 				s = found_nothing(format[i + 1]);
 			else
 				s = pointer_get_arg(ap);
+			if ((format[i + 1] == 'c' || format[i + 1] == 'C') && s[0] == '\0')
+			p_total += 1;
 			i++;
 			len = _strlen(s);
 			p_total += len;
