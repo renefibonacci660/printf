@@ -3,8 +3,8 @@
 #include <stdarg.h>
 #include <unistd.h>
 /**
- * rot13 - Converts string to rot13
- * @list: string to convert
+ * found_rot13 - Converts string to rot13
+ * @rot13: string passed to be converted
  * Return: converted string
  */
 char *found_rot13(va_list *rot13)
