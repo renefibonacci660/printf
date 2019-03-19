@@ -45,6 +45,8 @@ char *found_add(va_list add)
 	char *str;
 
 	res = va_arg(add, unsigned long);
+	if (res == 0)
+		return ("(nil)");
 	str = convert_add(res, 16, 0);
 	return (str);
 }
