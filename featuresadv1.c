@@ -13,7 +13,9 @@ char *found_bin(va_list bin)
 {
 	unsigned int i, res, tens, temp, count;
 	char *str;
+	static char buffer[100];
 
+	str = &buffer[0];
 	res = va_arg(bin, unsigned int);
 	count = i = 0;
 	tens = 1;
@@ -24,7 +26,6 @@ char *found_bin(va_list bin)
 		temp /= 2;
 		count++;
 	}
-	str = malloc((count + 1));
 	while (tens >= 1)
 	{
 		str[i++] = (((res / tens) % 2) + '0');
