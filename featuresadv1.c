@@ -5,7 +5,7 @@
 
 /**
  * found_bin - a function converts unsigned integer to binary
- * @octal: next argument type
+ * @bin: next argument type
  *
  * Return: return pointer to the converted string
  */
@@ -37,7 +37,7 @@ char *found_bin(va_list bin)
 
 /**
  * found_add - a function converts unsigned integer to hexidecimal string
- * @hex: name for hexidemical list call
+ * @add: next argument parameter
  * Return: return pointer to the converted string
  */
 char *found_add(va_list add)

@@ -112,7 +112,7 @@ char *found_octal(va_list octal)
 
 /**
  * found_hex - a function converts unsigned integer to hexidecimal
- * @hex: name for hexidemical list call
+ * @hex: next argument parameter
  * Return: return pointer to the converted string
  */
 char *found_hex(va_list hex)
@@ -127,7 +127,7 @@ char *found_hex(va_list hex)
 
 /**
  * found_HEX - a function converts unsigned integer to hexidecimal
- * @hex: name for hexidemical list call
+ * @HEX: next argument parameter
  * Return: return pointer to the converted string
  */
 char *found_HEX(va_list HEX)

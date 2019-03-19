@@ -1,7 +1,7 @@
 #ifndef HOLBERTON_H
 #define HOLBERTON_H
 #include <stdarg.h>
-#define BUFFERSIZE 1024
+
 /**
  * struct ArgTypes - data structure for argument
  * @car: pointer to format charater
@@ -12,7 +12,7 @@ typedef struct ArgTypes
 	char *car;
 	char *(*fn)();
 } Arg_Types;
-
+/* the following are prototypes */
 int _printf(const char *format, ...);
 char *(*get_arg_type(char s))(va_list);
 char *found_percent();
@@ -25,7 +25,6 @@ char *found_octal(va_list octal);
 char *found_hex(va_list hex);
 char *found_HEX(va_list HEX);
 int _strlen(char *s);
-char *ctos(char c);
 int _putchar(char c);
 void _puts(char *str, int size);
 char *found_bin(va_list bin);
