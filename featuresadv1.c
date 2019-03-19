@@ -1,7 +1,6 @@
 #include "holberton.h"
 #include <stdlib.h>
 #include <stdarg.h>
-#include <unistd.h>
 
 /**
  * found_bin - a function converts unsigned integer to binary
@@ -33,7 +32,6 @@ char *found_bin(va_list bin)
 	str[i] = '\0';
 	return (str);
 }
-
 
 /**
  * found_add - a function converts unsigned integer to hexidecimal string
