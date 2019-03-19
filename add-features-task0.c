@@ -32,7 +32,7 @@ char *found_string(va_list *s)
 
 	str = va_arg(s, char *);
 	if (str == NULL)
-		return ("(null)");
+		return ("null");
 	return (str);
 }
 
@@ -48,7 +48,6 @@ char *found_percent(void)
 	str = "%";
 	return (str);
 }
-
 /**
  * found_nothing - a function find nothing match the type after %
  * @c: a character after %
@@ -58,11 +57,11 @@ char *found_percent(void)
 char *found_nothing(char c)
 {
 	char str[3];
-	char *s;
+	char *s = NULL;
 
-	s = str;
 	str[0] = '%';
 	str[1] = c;
 	str[2] = '\0';
+	s = str;
 	return (s);
 }

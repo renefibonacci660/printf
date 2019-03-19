@@ -17,11 +17,9 @@ int _printf(const char *format, ...)
 	char *s;
 	va_list ap;
 	char *(*pointer_get_arg)(va_list);
-	char *v = "%";
 
-	if (format == NULL || strcmp(v, format) == 0)
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
-
 	len = p_total = 0;
 	va_start(ap, format);
 	for (i = 0; format != NULL && format[i] != '\0'; i++)
@@ -29,7 +27,10 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			pointer_get_arg = get_arg_type(format[i + 1]);
-			s = (!pointer_get_arg) ? found_nothing(format[i + 1]) : pointer_get_arg(ap);
+			if (pointer_get_arg == NULL)
+				s = found_nothing(format[i + 1]);
+			else
+				s = pointer_get_arg(ap);
 			i++;
 			len = _strlen(s);
 			p_total += len;
