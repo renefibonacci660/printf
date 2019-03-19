@@ -31,5 +31,6 @@ char *found_bin(va_list bin);
 char *found_add(va_list add);
 char *convert(unsigned int num, int base, int flag);
 char *convert_add(unsigned long num, unsigned long base, int flag);
+char *found_rot13(va_list *rot13);
 
 #endif /* HOLBERTON_H */
