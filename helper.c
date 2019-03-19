@@ -15,6 +15,7 @@ char *(*get_arg_type(char s))(va_list)
 
 	Arg_Types arg_types[] = {
 		{"c", found_char},
+		{"C", found_char},
 		{"s", found_string},
 		{"%", found_percent},
 		{"d", found_int},
@@ -22,6 +23,9 @@ char *(*get_arg_type(char s))(va_list)
 		{"u", found_unsigned},
 		{"o", found_octal},
 		{"x", found_hex},
+		{"X", found_HEX},
+		{"b", found_bin},
+		{"p", found_add},
 		{NULL, NULL}
 	};
 	for (i = 0; arg_types[i].car; i++)

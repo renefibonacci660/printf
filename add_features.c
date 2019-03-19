@@ -32,7 +32,7 @@ char *found_string(va_list *s)
 
 	str = va_arg(s, char *);
 	if (str == NULL)
-		return ("null");
+		return ("(null)");
 	return (str);
 }
 
@@ -64,21 +64,5 @@ char *found_nothing(char c)
 	str[0] = '%';
 	str[1] = c;
 	str[2] = '\0';
-	return (s);
-}
-
-/**
- * ctos - a function convert character to string
- * @c: a character
- *
- * Return: return a pointer to string
- */
-char *ctos(char c)
-{
-	char str[1];
-	char *s;
-
-	s = str;
-	str[0] = c;
 	return (s);
 }

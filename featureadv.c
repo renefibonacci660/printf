@@ -115,43 +115,27 @@ char *found_octal(va_list octal)
  * @hex: name for hexidemical list call
  * Return: return pointer to the converted string
  */
-
 char *found_hex(va_list hex)
 {
-	unsigned int i, res, tens, temp, count;
+	unsigned int res;
 	char *str;
 
 	res = va_arg(hex, unsigned int);
-	count = i = 0;
-	tens = 1;
-	temp = res;
-	while (temp >= 16)
-	{
-		tens *= 16;
-		temp /= 16;
-		count++;
-	}
-	str = malloc((count + 1));
-	while (tens >= 1)
-	{
-		str[i++] = (((res / tens) % 16) + '0');
-		tens /= 16;
-	}
-	str[i] = '\0';
+	str = convert(res, 16, 0);
 	return (str);
 }
 
 /**
- * _strlen - a function that returns the length of string
- *@s: a pointer of string
- *
- * Return: the length of string
+ * found_HEX - a function converts unsigned integer to hexidecimal
+ * @hex: name for hexidemical list call
+ * Return: return pointer to the converted string
  */
-int _strlen(char *s)
+char *found_HEX(va_list HEX)
 {
-	int i;
+	unsigned int res;
+	char *str;
 
-	for (i = 0; *s; i++)
-		s++;
-	return (i);
+	res = va_arg(HEX, unsigned int);
+	str = convert(res, 16, 1);
+	return (str);
 }
