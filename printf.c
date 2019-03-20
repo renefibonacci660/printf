@@ -1,7 +1,6 @@
 #include "holberton.h"
-#include <stddef.h>
+#include <stdarg.h>
 #include <stdlib.h>
-#include <stdio.h>
 
 /**
  * _printf - a function that prints the argument upon its type and format
