@@ -1,5 +1,5 @@
 # Project name: printf
-TESTING..
+
   This is a group project, writes a function-like printf() function in C
 
 ## Project Requirements:
@@ -15,11 +15,17 @@ TESTING..
 
   + holberton.h - a header file that contain all prototypes for functions
 
-  + _printf.c - a printf() like function
+  + printf.c - a printf() like function
 
-  + help.c - a help function include the subfunctions ready for called by _printf function
+  + helper.c - a helper function include the subfunctions ready for called by _printf function
 
-  + add_features.c - a function that contains the types of that _printf can print
+  + helper1.c - a helper function include the subfunctions of strlen, base convertion.
+
+  + add_features.c - a function that contains the types of %c, %s print format
+
+  + featureadv.c - a function that contains the types of %h, %H, %o, %i, %u print format
+
+  + featuresadv1.c - a function that contains the types of %b, %p binary and memory address print format
 
 ## Peers Project by:
 
