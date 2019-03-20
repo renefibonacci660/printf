@@ -16,11 +16,13 @@ char *found_char(va_list c)
 
 	s = str;
 	str[0] = va_arg(c, int);
-	str[1] = '\0';
 	if (str[0] == '\0')
 		return (NULL);
 	else
+	{
+		str[1] = '\0';
 		return (s);
+	}
 }
 
 /**
