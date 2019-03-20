@@ -24,8 +24,29 @@ FORMAT controls the output are:
 .br
 .B
 %d  prints ARGUMENT as integer
+.br
 .B
 %i prints ARGUMENT as integer
+.br
+.B
+%u prints Argument as unsigned integer
+.br
+.B
+%b prints Argument as binary format
+.br
+.B
+%p prints Argument as memory address format, 0xHEX
+.br
+.B
+%h prints Argument as lowercase hexadecimal format
+.br
+.B
+%H prints Argument as uppercase hexadecimal format
+.br
+.B
+%o prints Argument as octal format
+.br
+.B the function returns the number of characters have been print
 
 .SH BUGS
 No known bugs.
