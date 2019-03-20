@@ -33,7 +33,10 @@ int _printf(const char *format, ...)
 			else
 				s = pointer_get_arg(ap);
 			if ((format[i + 1] == 'c' || format[i + 1] == 'C') && (s == NULL))
-				p_total++;
+			{
+				_putchar('\0');
+				i++;
+			}
 			else
 			{
 				i++;
