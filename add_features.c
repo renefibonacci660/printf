@@ -14,6 +14,8 @@ char *found_char(va_list c)
 	char str[2];
 	char *s;
 
+	if (c == '\0')
+		return (NULL);
 	s = str;
 	str[0] = va_arg(c, int);
 	str[1] = '\0';
