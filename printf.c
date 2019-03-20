@@ -49,10 +49,7 @@ int _printf(const char *format, ...)
 			}
 		}
 		else
-		{
-			_putchar(format[i]);
-			p_total++;
-		}
+			p_total += _putchar(format[i]);
 	}
 	va_end(ap);
 	return (p_total);

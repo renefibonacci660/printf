@@ -18,11 +18,9 @@ char *found_char(va_list c)
 	str[0] = va_arg(c, int);
 	if (str[0] == '\0')
 		return (NULL);
-	else
-	{
-		str[1] = '\0';
-		return (s);
-	}
+	str[1] = '\0';
+	return (s);
+
 }
 
 /**
