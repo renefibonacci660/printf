@@ -35,6 +35,7 @@ int _printf(const char *format, ...)
 			if ((format[i + 1] == 'c' || format[i + 1] == 'C') && (s == NULL))
 			{
 				_putchar('\0');
+				p_total++;
 				i++;
 			}
 			else
