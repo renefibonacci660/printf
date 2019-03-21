@@ -51,6 +51,25 @@ char *convert_add(unsigned long num, unsigned long base, int flag)
 	*--ptr = '0';
 	return (ptr);
 }
+/**
+ * convert_unprt - a function that converts int to string upon the base
+ * @asc: a unprintable character's ascii value
+ * @base: converting to upon the base
+ *
+ * Return: return pointer to string
+ */
+char *convert_unprt(unsigned int asc, int base)
+{
+	static char *array;
+	static char buffer[3];
+
+	array = "0123456789ABCDEF";
+	buffer[2] = '\0';
+	buffer[1] = array[asc % base];
+	asc /= base;
+	buffer[0] = array[asc % base];
+	return (buffer);
+}
 
 /**
  * _strlen - a function that returns the length of string

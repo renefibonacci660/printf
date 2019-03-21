@@ -50,3 +50,40 @@ char *found_add(va_list add)
 	str = convert_add(res, 16, 0);
 	return (str);
 }
+
+/**
+ * found_unprint - a function converts unprintable character to \xHEX format
+ * @unprt: a next argument
+ *
+ * Return: return a pointer to string
+ */
+char *found_unprint(va_list *unprt)
+{
+	char *str, *str_new, *s;
+	unsigned int len, asci;
+	static char buffer[1000];
+
+	str_new = &buffer[999];
+	str = va_arg(unprt, char *);
+	if (!*str)
+		return ("(null)");
+	len = _strlen(str);
+	*str_new = '\0';
+	while (len > 0)
+	{
+		asci = str[--len];
+		if (asci < 32 || asci >= 127)
+		{
+			s = convert_unprt(asci, 16);
+			*--str_new = s[1];
+			*--str_new = s[0];
+			*--str_new = 'x';
+			*--str_new = '\\';
+		}
+		else
+		{
+			*--str_new = str[len];
+		}
+	}
+	return (str_new);
+}

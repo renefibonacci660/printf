@@ -27,8 +27,8 @@ char *(*get_arg_type(char s))(va_list)
 		{"b", found_bin},
 		{"p", found_add},
 		{"R", found_rot13},
+		{"S", found_unprint},
 		{NULL, NULL}
-
 	};
 	for (i = 0; arg_types[i].car; i++)
 	{
