@@ -65,7 +65,7 @@ char *found_unprint(va_list *unprt)
 
 	str_new = &buffer[999];
 	str = va_arg(unprt, char *);
-	if (!*str)
+	if (str == NULL)
 		return ("(null)");
 	len = _strlen(str);
 	*str_new = '\0';
