@@ -1,7 +1,7 @@
 #include "holberton.h"
 #include <stdlib.h>
 #include <stdarg.h>
-
+#include <unistd.h>
 /**
  * convert - a function that converts int to string upon the base
  * @num: number to be converted

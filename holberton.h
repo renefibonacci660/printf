@@ -34,5 +34,8 @@ char *convert_add(unsigned long num, unsigned long base, int flag);
 char *found_rot13(va_list *rot13);
 char *found_unprint(va_list *unprt);
 char *convert_unprt(unsigned int asc, int base);
+void _puts(char *buffer, int size);
+char *_memcopy(char *dest, char *src, int n);
+char *ctos(char c);
 
 #endif /* HOLBERTON_H */

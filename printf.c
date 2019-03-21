@@ -14,15 +14,19 @@
 
 int _printf(const char *format, ...)
 {
-	int i, len, p_total;
-	char *s;
+	int i, j, len, len_buf, p_total;
+	char *s, *str;
+	static char buffer[1024];
 	va_list ap;
 	char *(*pointer_get_arg)(va_list);
 	char *v = "%";
 
+	str = &buffer[0];
+	for (j = 0; j < 1024; j++)
+		buffer[j] = 0;
 	if (format == NULL || strcmp(format, v) == 0)
 		return (-1);
-	len = p_total = 0;
+	len = p_total = len_buf = 0;
 	va_start(ap, format);
 	for (i = 0; format[i] != '\0'; i++)
 	{
@@ -43,14 +47,37 @@ int _printf(const char *format, ...)
 			{
 				i++;
 				len = _strlen(s);
-				p_total += len;
-				while (*s)
-					_putchar(*s++);
+				if (*str)
+					len_buf = _strlen(str);
+				if (len > 1023)
+				{
+					_puts(s, len);
+					p_total += len;
+				}
+				else if ((len_buf + len) > 1024)
+				{
+					_puts(buffer, len_buf);
+					p_total += len_buf;
+					for (j = 0; j <= 1024; j++)
+						buffer[j] = 0;
+					str = _memcopy(str, s, 0);
+				}
+				else
+					str = _memcopy(str, s, len_buf);
 			}
 		}
 		else
-			p_total += _putchar(format[i]);
+		{
+			s = ctos(format[i]);
+			if (*str)
+				len_buf = _strlen(str);
+			str = _memcopy(str, s, len_buf);
+		}
 	}
 	va_end(ap);
+	if (*str)
+		len_buf = _strlen(str);
+	_puts(str, len_buf);
+	p_total += len_buf;
 	return (p_total);
 }
